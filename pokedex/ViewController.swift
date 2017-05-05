@@ -38,6 +38,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         do {
             musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
             musicPlayer.prepareToPlay()
+            musicPlayer.volume = 0.3
             musicPlayer.numberOfLoops = -1
             musicPlayer.play()
         } catch let err as NSError {
@@ -60,8 +61,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 
                 pokemon.append(poke)
             }
-            
-            print(rows)
         } catch let err as NSError {
             print(err.debugDescription)
         }
